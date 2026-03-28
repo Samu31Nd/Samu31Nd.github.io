@@ -104,4 +104,4 @@ export const CustomIcons = {
     // figma:      createSvgIcon("figma"),
     // blender:    createSvgIcon("blender"),
     // illustrator: createSvgIcon("illustrator"),
-} satisfies Record<string, ({ className: string }: SvgIconProps) => JSX.Element>
+} satisfies Record<string, (props: SvgIconProps) => JSX.Element>
