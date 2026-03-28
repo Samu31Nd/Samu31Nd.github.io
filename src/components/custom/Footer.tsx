@@ -7,10 +7,11 @@ export function Footer() {
 
     return (
         <footer id="connect" className="border-t border-border/30 px-4 sm:px-6 py-20 sm:py-28">
+            {/* This element is not showing correctly, the left and right column takes more width in phone devices */}
             <div className="mx-auto max-w-7xl">
                 <div className="grid gap-12 sm:gap-16 lg:grid-cols-2">
                     {/* Left column */}
-                    <div className="space-y-6 sm:space-y-8 animate-fade-in-up">
+                    <div className="min-w-0 space-y-6 sm:space-y-8 animate-fade-in-up">
                         <div className="space-y-3">
                             <p className="font-mono text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-primary">Connect</p>
                             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl text-balance">
@@ -35,7 +36,7 @@ export function Footer() {
                     </div>
 
                     {/* Right column - Links */}
-                    <div className="space-y-6 lg:text-right animate-fade-in-up stagger-2">
+                    <div className="min-w-0 space-y-6 lg:text-right animate-fade-in-up stagger-2">
                         <p className="font-mono text-xs uppercase tracking-[0.25em] sm:tracking-[0.35em] text-muted-foreground">
                             Find me elsewhere
                         </p>
@@ -65,6 +66,7 @@ export function Footer() {
                     </div>
                 </div>
 
+                {/* very footer, already responsive */}
                 <div className="mt-16 sm:mt-20 flex flex-col items-center justify-between gap-6 border-t border-border/30 pt-8 sm:pt-10 sm:flex-row animate-fade-in stagger-4">
 
 
