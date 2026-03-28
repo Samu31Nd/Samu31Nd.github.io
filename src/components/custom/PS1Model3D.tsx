@@ -93,7 +93,7 @@ const FloatingModel = ({ modelPath }: FloatingModelProps): JSX.Element => {
         groupRef.current.position.y = Math.sin(t * 0.9) * 0.12;
 
         // Slow auto-rotation on Y axis
-        groupRef.current.rotation.y += 0.005;
+        groupRef.current.rotation.y += 0.01;
 
         // Subtle pitch tilt for a suspended-in-air feeling
         groupRef.current.rotation.x = Math.sin(t * 0.5) * 0.04;
@@ -103,9 +103,10 @@ const FloatingModel = ({ modelPath }: FloatingModelProps): JSX.Element => {
         <group
             ref={groupRef}
             scale={scale}
+            rotation={[0, -Math.PI / 2, 0]}
             position={[
                 -center.x * scale,
-                -center.y * scale,
+                -center.y * scale - 10,
                 -center.z * scale,
             ]}
         >
