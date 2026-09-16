@@ -85,12 +85,12 @@ export function TechStack() {
         <div className="grid gap-4 sm:gap-5 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
           {filteredStack.map((item, index) => (
             <article
-              key={item.id}
+              key={item.index}
               className={cn(
                 "group relative overflow-hidden rounded-xl border border-border/60 bg-card/40 p-5 sm:p-6 glass transition-all duration-400 hover:border-primary/40 hover:bg-card/70 active:scale-[0.98] hover-lift animate-fade-in-up",
               )}
               style={{ animationDelay: `${(index % 8) * 80 + 150}ms` }}
-              onMouseEnter={() => setHoveredItem(item.id)}
+              onMouseEnter={() => setHoveredItem(item.index)}
               onMouseLeave={() => setHoveredItem(null)}
             >
               {/* Background gradient on hover */}
@@ -129,7 +129,7 @@ export function TechStack() {
                 <p
                   className={cn(
                     "text-center text-xs text-muted-foreground leading-relaxed transition-all duration-300",
-                    hoveredItem === item.id
+                    hoveredItem === item.index
                       ? "opacity-100 max-h-20"
                       : "opacity-0 max-h-0 overflow-hidden sm:opacity-60 sm:max-h-20",
                   )}
@@ -162,7 +162,7 @@ export function TechStack() {
                       )}
                       style={{
                         width:
-                          hoveredItem === item.id ||
+                          hoveredItem === item.index ||
                           typeof window !== "undefined"
                             ? `${item.proficiency}%`
                             : "0%",
@@ -173,7 +173,7 @@ export function TechStack() {
                     <div
                       className={cn(
                         "absolute inset-0 animate-shimmer transition-opacity duration-300",
-                        hoveredItem === item.id ? "opacity-40" : "opacity-0",
+                        hoveredItem === item.index ? "opacity-40" : "opacity-0",
                       )}
                     />
                   </div>
